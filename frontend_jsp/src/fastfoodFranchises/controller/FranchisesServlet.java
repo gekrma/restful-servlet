@@ -25,7 +25,7 @@ import fastfoodFranchises.dto.ResObjGetAll;
 @WebServlet("/franchises.do")
 public class FranchisesServlet extends HttpServlet {
 	private String origin = "http://127.0.0.1:8081";
-	private String projectName = "step10_miniProject_backend_JeongHyeon";
+	private String projectName = "backend_servlet";
 	private String servletName = "franchises";
 	private String defaultUrl = ( origin + "/" + projectName + "/" + servletName );
     private Gson gson = new Gson();
