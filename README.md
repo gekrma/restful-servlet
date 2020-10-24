@@ -53,71 +53,71 @@
 	( backend_servlet : 프로젝트명, franchises : 서블릿명 )
 	( 프로젝트명은 제외할 수 있으나 별도로 설정해야 하고 또, 공유를 위한 프로젝트이기 때문에 보류하였음 )
 
-*DTO : 1. new Franchises(
-					String brand 		// 브랜드(PK)
-					String company		// 상호
-					int franchisesNum	// 가맹점수
-					int avgSales		// 평균매출액
-					int areaAvgSales	// 면적당 평균매출액
+*DTO : 1. new Franchises(<br />
+					String brand 		// 브랜드(PK)<br />
+					String company		// 상호<br />
+					int franchisesNum	// 가맹점수<br />
+					int avgSales		// 평균매출액<br />
+					int areaAvgSales	// 면적당 평균매출액<br />
 		);
 
 1. GET
 	- (1) 기본 URL : 전체 프랜차이즈를 가맹점수 내림차순으로 출력
 			
-	예시) GET - http://127.0.0.1:8081/backend_servlet/franchises
-	결과)
-	{
-	  "code": 200,
-	  "data": [
-	    {
-	      "brand": "롯데리아",
-	      "company": "롯데지알에스(주)",
-	      "franchisesNum": 1207,
-	      "avgSales": 647888,
-	      "areaAvgSales": 12543
-	    },
-	    {
-	      "brand": "맘스터치",
-	      "company": "해마로푸드서비스(주)",
-	      "franchisesNum": 1167,
-	      "avgSales": 425896,
-	      "areaAvgSales": 17326
-	    },
-	    {
-	      "brand": "뉴욕핫도그앤커피",
-	      "company": "(주)뉴욕핫도그앤커피",
-	      "franchisesNum": 120,
-	      "avgSales": 48858,
-	      "areaAvgSales": 4696
-	    },
-	    {
-	      "brand": "버거킹(Burger King)",
-	      "company": "(주)비케이알",
-	      "franchisesNum": 99,
-	      "avgSales": 913851,
-      	      "areaAvgSales": 12792
-      	    },
-   		...
-  	  ]
-    	}
+	예시) GET - http://127.0.0.1:8081/backend_servlet/franchises<br />
+	결과)<br />
+	{<br />
+	  "code": 200,<br />
+	  "data": [<br />
+	    {<br />
+	      "brand": "롯데리아",<br />
+	      "company": "롯데지알에스(주)",<br />
+	      "franchisesNum": 1207,<br />
+	      "avgSales": 647888,<br />
+	      "areaAvgSales": 12543<br />
+	    },<br />
+	    {<br />
+	      "brand": "맘스터치",<br />
+	      "company": "해마로푸드서비스(주)",<br />
+	      "franchisesNum": 1167,<br />
+	      "avgSales": 425896,<br />
+	      "areaAvgSales": 17326<br />
+	    },<br />
+	    {<br />
+	      "brand": "뉴욕핫도그앤커피",<br />
+	      "company": "(주)뉴욕핫도그앤커피",<br />
+	      "franchisesNum": 120,<br />
+	      "avgSales": 48858,<br />
+	      "areaAvgSales": 4696<br />
+	    },<br />
+	    {<br />
+	      "brand": "버거킹(Burger King)",<br />
+	      "company": "(주)비케이알",<br />
+	      "franchisesNum": 99,<br />
+	      "avgSales": 913851,<br />
+      	      "areaAvgSales": 12792<br />
+      	    },<br />
+   		...<br />
+  	  ]<br />
+    	}<br />
     
-    - (2) 기본 URL + ?order={order} : 전체 프랜차이즈를 franchisesNum 혹은 avgSales, areaAvgSales 내림차순으로 출력
-          예시) GET - http://127.0.0.1:8081/backend_servlet/franchises?order=avgSales
+    - (2) 기본 URL + ?order={order} : 전체 프랜차이즈를 franchisesNum 혹은 avgSales, areaAvgSales 내림차순으로 출력<br />
+          예시) GET - http://127.0.0.1:8081/backend_servlet/franchises?order=avgSales<br />
           결과) 위와 동일
           
-    - (3) 기본 URL + /{브랜드} : 전체 프랜차이즈에서 브랜드로 조회
-          예시) GET - http://127.0.0.1:8081/backend_servlet/franchises/롯데리아
-          결과)
-     	{
-		"code": 200,
-		 data": {
-			"brand": "롯데리아",
-			"company": "롯데지알에스(주)",
-			"franchisesNum": 1207,
-			"avgSales": 647888,
-			"areaAvgSales": 12543
-		}
-	 }
+    - (3) 기본 URL + /{브랜드} : 전체 프랜차이즈에서 브랜드로 조회<br />
+          예시) GET - http://127.0.0.1:8081/backend_servlet/franchises/롯데리아<br />
+          결과)<br />
+     	{<br />
+		"code": 200,<br />
+		 data": {<br />
+			"brand": "롯데리아",<br />
+			"company": "롯데지알에스(주)",<br />
+			"franchisesNum": 1207,<br />
+			"avgSales": 647888,<br />
+			"areaAvgSales": 12543<br />
+		}<br />
+	 }<br />
 	 
 2. POST 
 	- (1) 기본 URL + ?brand={brand}&company={company}&franchisesNum={franchisesNum}&avgSales={avgSales}&areaAvgSales={areaAvgSales}
@@ -127,7 +127,7 @@
 	- (1) 기본 URL + ?_method=put&{위의 POST와 동일} : 프랜차이즈 수정
 	
 4. DELETE
-	- (1) 기본 URL + /{브랜드}
+	- (1) 기본 URL + /{브랜드}<br />
 	 예시) POST - http://127.0.0.1:8081/backend_servlet/franchises/롯데리아?_method=delete
 	 
 5. code
