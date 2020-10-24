@@ -54,11 +54,11 @@
 	( 프로젝트명은 제외할 수 있으나 별도로 설정해야 하고 또, 공유를 위한 프로젝트이기 때문에 보류하였음 )
 
 *DTO : 1. new Franchises(<br />
-					String brand 		// 브랜드(PK)<br />
-					String company		// 상호<br />
-					int franchisesNum	// 가맹점수<br />
-					int avgSales		// 평균매출액<br />
-					int areaAvgSales	// 면적당 평균매출액<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String brand 		// 브랜드(PK)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String company		// 상호<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int franchisesNum	// 가맹점수<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int avgSales		// 평균매출액<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int areaAvgSales	// 면적당 평균매출액<br />
 		);
 
 1. GET
