@@ -7,8 +7,8 @@
 		- (3). PrintWirter 로 Json 정상 출력
 	
 	- Frontend(frontend_jsp)
-		- (1). Encoding 으로써 정상적으로 url 을 지정해서 Rest API 로 호출하기
-		- (2). Rest API 로부터 Json 과 DTO 를 이용하여 정상적으로 값 받아오기
+		- (1). Encoding 으로써 정상적으로 uri 를 지정해서 Rest API 를 호출하기
+		- (2). Rest API 호출로부터 JSON 과 DTO 를 이용하여 정상적으로 값 받아오기
 		- (3). EL, JSTL 등 JSP 태그 활용
 		- (4). w3schools 로부터 html/css 양식 갖다쓰기
 		
@@ -54,10 +54,10 @@
 	( 프로젝트명은 제외할 수 있으나 별도로 설정해야 하고 또, 공유를 위한 프로젝트이기 때문에 보류하였음 )
 
 *DTO : 1. new Franchises(<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String brand 		// 브랜드(PK)<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String company		// 상호<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String brand 	// 브랜드(PK)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	String company	// 상호<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int franchisesNum	// 가맹점수<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int avgSales		// 평균매출액<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int avgSales	// 평균매출액<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	int areaAvgSales	// 면적당 평균매출액<br />
 		);
 
@@ -105,12 +105,12 @@
           예시) GET - http://127.0.0.1:8081/backend_servlet/franchises?order=avgSales<br />
           결과) 위와 동일
           
-    - (3) 기본 URL + /{브랜드} : 전체 프랜차이즈에서 브랜드로 조회<br />
+    - (3) 기본 URL + /{brand} : 전체 프랜차이즈에서 브랜드로 조회<br />
           예시) GET - http://127.0.0.1:8081/backend_servlet/franchises/롯데리아<br />
           결과)<br />
      	{<br />
 		"code": 200,<br />
-		 data": {<br />
+		"data": {<br />
 			"brand": "롯데리아",<br />
 			"company": "롯데지알에스(주)",<br />
 			"franchisesNum": 1207,<br />
@@ -120,15 +120,30 @@
 	 }<br />
 	 
 2. POST 
-	- (1) 기본 URL + ?brand={brand}&company={company}&franchisesNum={franchisesNum}&avgSales={avgSales}&areaAvgSales={areaAvgSales}
-		  : 프랜차이즈 추가
-
+	- (1) 기본 URL + ?_method=post&brand={brand}&company={company}&franchisesNum={franchisesNum}&avgSales={avgSales}&areaAvgSales={areaAvgSales} : 프랜차이즈 추가<br />
+	 예시) POST - http://127.0.0.1:8081/backend_servlet/franchises?_method=post&brand=집게리아&company=스폰지밥&franchisesNum=10&avgSales=300000&areaAvgSales=11111<br />
+	 결과)<br />	
+     	    {<br />
+		"code": 201,<br />
+		"data": "성공적으로 추가되었습니다."<br /> 
+	     }<br />
 3. PUT
-	- (1) 기본 URL + ?_method=put&{위의 POST와 동일} : 프랜차이즈 수정
+	- (1) 기본 URL + /{brand} + ?_method=put&{위의 POST와 동일} : 프랜차이즈 수정<br />
+	 예시) POST - http://127.0.0.1:8081/backend_servlet/franchises/집게리아?_method=put&brand=스폰지리아&company=스폰지밥&franchisesNum=20&avgSales=400000&areaAvgSales=22222<br />
+	 결과)<br />	
+     	    {<br />
+		"code": 204,<br />
+		"data": "성공적으로 수정되었습니다."<br /> 
+	     }<br />
 	
 4. DELETE
-	- (1) 기본 URL + /{브랜드}<br />
-	 예시) POST - http://127.0.0.1:8081/backend_servlet/franchises/롯데리아?_method=delete
+	- (1) 기본 URL + /{brand} + ?_method=delete<br />
+	 예시) POST - http://127.0.0.1:8081/backend_servlet/franchises/롯데리아?_method=delete<br />
+	 결과)<br />	
+     	    {<br />
+		"code": 204,<br />
+		"data": "성공적으로 삭제되었습니다."<br /> 
+	     }<br />
 	 
 5. code
 	- (1) 200 : HttpServletResponse.SC_OK, 성공적으로 조회하여 데이터를 받아왔을 때. 주로 GET
