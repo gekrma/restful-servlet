@@ -70,32 +70,32 @@
 	  "code": 200,<br />
 	  "data": [<br />
 	    {<br />
-	      "brand": "롯데리아",<br />
-	      "company": "롯데지알에스(주)",<br />
-	      "franchisesNum": 1207,<br />
-	      "avgSales": 647888,<br />
-	      "areaAvgSales": 12543<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "brand": "롯데리아",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "company": "롯데지알에스(주)",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "franchisesNum": 1207,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "avgSales": 647888,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "areaAvgSales": 12543<br />
 	    },<br />
 	    {<br />
-	      "brand": "맘스터치",<br />
-	      "company": "해마로푸드서비스(주)",<br />
-	      "franchisesNum": 1167,<br />
-	      "avgSales": 425896,<br />
-	      "areaAvgSales": 17326<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "brand": "맘스터치",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "company": "해마로푸드서비스(주)",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "franchisesNum": 1167,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "avgSales": 425896,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "areaAvgSales": 17326<br />
 	    },<br />
 	    {<br />
-	      "brand": "뉴욕핫도그앤커피",<br />
-	      "company": "(주)뉴욕핫도그앤커피",<br />
-	      "franchisesNum": 120,<br />
-	      "avgSales": 48858,<br />
-	      "areaAvgSales": 4696<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "brand": "뉴욕핫도그앤커피",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "company": "(주)뉴욕핫도그앤커피",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "franchisesNum": 120,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "avgSales": 48858,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "areaAvgSales": 4696<br />
 	    },<br />
 	    {<br />
-	      "brand": "버거킹(Burger King)",<br />
-	      "company": "(주)비케이알",<br />
-	      "franchisesNum": 99,<br />
-	      "avgSales": 913851,<br />
-      	      "areaAvgSales": 12792<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "brand": "버거킹(Burger King)",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "company": "(주)비케이알",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "franchisesNum": 99,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	      "avgSales": 913851,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   	      "areaAvgSales": 12792<br />
       	    },<br />
    		...<br />
   	  ]<br />
@@ -111,11 +111,11 @@
      	{<br />
 		"code": 200,<br />
 		"data": {<br />
-			"brand": "롯데리아",<br />
-			"company": "롯데지알에스(주)",<br />
-			"franchisesNum": 1207,<br />
-			"avgSales": 647888,<br />
-			"areaAvgSales": 12543<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			"brand": "롯데리아",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			"company": "롯데지알에스(주)",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			"franchisesNum": 1207,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			"avgSales": 647888,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			"areaAvgSales": 12543<br />
 		}<br />
 	 }<br />
 	 
