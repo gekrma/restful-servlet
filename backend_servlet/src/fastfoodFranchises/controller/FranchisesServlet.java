@@ -30,9 +30,9 @@ public class FranchisesServlet extends HttpServlet {
 	private void sendAsJson( HttpServletResponse response, String resObject ) throws IOException {
 		response.setContentType( "application/json" );
 		response.setCharacterEncoding( "UTF-8" );
-	    PrintWriter out = response.getWriter();
-	    out.print( resObject );
-	    out.close();
+		PrintWriter out = response.getWriter();
+		out.print( resObject );
+		out.close();
 	}
 	
 	private HashMap<String, String> paramMap( HttpServletRequest request ) {
@@ -92,8 +92,8 @@ public class FranchisesServlet extends HttpServlet {
 			data = jsonArray;
 		}
 
-	    String resObject = gson.toJson( new ResObject( code, data ) );
-	    sendAsJson( response, resObject );
+	    	String resObject = gson.toJson( new ResObject( code, data ) );
+	    	sendAsJson( response, resObject );
 	}
 	
 	protected void getOne( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -126,8 +126,8 @@ public class FranchisesServlet extends HttpServlet {
 			data = "브랜드명에 해당하는 데이터가 없습니다.";
 		}
 
-	    String resObject = gson.toJson( new ResObject( code, data ) );
-	    sendAsJson( response, resObject );
+	    	String resObject = gson.toJson( new ResObject( code, data ) );
+	    	sendAsJson( response, resObject );
 	}
 	
 	protected void doPost( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -151,14 +151,14 @@ public class FranchisesServlet extends HttpServlet {
 
 		try {
 			insertResult = franchisesDAO.insertFranchises( 
-											new Franchises( 
-													hashMap.get( "brand" ), 
-													hashMap.get( "company" ), 
-													Integer.parseInt( hashMap.get( "franchisesNum" ) ), 
-													Integer.parseInt( hashMap.get( "avgSales") ), 
-													Integer.parseInt( hashMap.get( "areaAvgSales" ) )
-												) 
-											);
+							new Franchises( 
+								hashMap.get( "brand" ), 
+								hashMap.get( "company" ), 
+								Integer.parseInt( hashMap.get( "franchisesNum" ) ), 
+								Integer.parseInt( hashMap.get( "avgSales") ), 
+								Integer.parseInt( hashMap.get( "areaAvgSales" ) )
+								) 
+							);
 		} catch ( SQLException error ) {
 			error.printStackTrace();
 			code = response.SC_BAD_REQUEST;
@@ -169,8 +169,8 @@ public class FranchisesServlet extends HttpServlet {
 			data = "내부 서버에 이상이 발생하였습니다.";
 		}
 
-	    String resObject = gson.toJson( new ResObject( code, data ) );
-	    sendAsJson( response, resObject );
+	    	String resObject = gson.toJson( new ResObject( code, data ) );
+	    	sendAsJson( response, resObject );
 	}
 
 	protected void doPut( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -181,14 +181,14 @@ public class FranchisesServlet extends HttpServlet {
 
 		try {
 			insertResult = franchisesDAO.updateFranchises( 
-											new Franchises( 
-													hashMap.get( "brand" ), 
-													hashMap.get( "company" ), 
-													Integer.parseInt( hashMap.get( "franchisesNum" ) ), 
-													Integer.parseInt( hashMap.get( "avgSales") ), 
-													Integer.parseInt( hashMap.get( "areaAvgSales" ) )
-												) 
-											);
+							new Franchises( 
+								hashMap.get( "brand" ), 
+								hashMap.get( "company" ), 
+								Integer.parseInt( hashMap.get( "franchisesNum" ) ), 
+								Integer.parseInt( hashMap.get( "avgSales") ), 
+								Integer.parseInt( hashMap.get( "areaAvgSales" ) )
+								) 
+							);
 		} catch ( SQLException error ) {
 			error.printStackTrace();
 			code = response.SC_BAD_REQUEST;
@@ -199,8 +199,8 @@ public class FranchisesServlet extends HttpServlet {
 			data = "내부 서버에 이상이 발생하였습니다.";
 		}
 		
-	    String resObject = gson.toJson( new ResObject( code, "" ) );
-	    sendAsJson( response, resObject );
+	    	String resObject = gson.toJson( new ResObject( code, "" ) );
+	    	sendAsJson( response, resObject );
 	}
 
 	protected void doDelete( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
@@ -221,8 +221,8 @@ public class FranchisesServlet extends HttpServlet {
 			data = "내부 서버에 이상이 발생하였습니다.";
 		}
 		
-	    String resObject = gson.toJson( new ResObject( code, data ) );
-	    sendAsJson( response, resObject );
+	    	String resObject = gson.toJson( new ResObject( code, data ) );
+	    	sendAsJson( response, resObject );
 	}
 
 }

@@ -63,7 +63,7 @@ public class FranchisesDAO {
 		return franchises;
 	}
 	
-	// 프랜차이즈 주가
+	// 프랜차이즈 추가
 	public boolean insertFranchises( Franchises franchises ) throws SQLException {
 		Connection con = null;	
 		PreparedStatement pstmt = null;
@@ -71,7 +71,7 @@ public class FranchisesDAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement( "insert into fastfood_franchises values(?,?,?,?,?)" );
+			pstmt = con.prepareStatement( "insert into fastfood_franchises values( ?, ?, ?, ?, ? )" );
 			setQuery( pstmt, franchises );
 	        result = ( pstmt.executeUpdate() != 0 );
 		} finally {
@@ -132,11 +132,11 @@ public class FranchisesDAO {
 	
 	// set_Query
 	private void setQuery( PreparedStatement pstmt, Franchises franchises ) throws SQLException {
-        pstmt.setString( 1, franchises.getBrand() );
-        pstmt.setString( 2, franchises.getCompany() );
-        pstmt.setInt( 3, franchises.getFranchisesNum() );
-        pstmt.setInt( 4, franchises.getAvgSales() );
-        pstmt.setInt( 5, franchises.getAreaAvgSales() );
+        		pstmt.setString( 1, franchises.getBrand() );
+        		pstmt.setString( 2, franchises.getCompany() );
+        		pstmt.setInt( 3, franchises.getFranchisesNum() );
+        		pstmt.setInt( 4, franchises.getAvgSales() );
+        		pstmt.setInt( 5, franchises.getAreaAvgSales() );
 	}
 	
 }

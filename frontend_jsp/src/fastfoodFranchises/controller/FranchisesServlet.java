@@ -100,29 +100,29 @@ public class FranchisesServlet extends HttpServlet {
 	protected void franchisesList( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 		String order = request.getParameter( "order" );
 		URL url = new URL( defaultUrl + "?order=" + order );
-        HttpURLConnection connection = ( HttpURLConnection ) url.openConnection();
+        		HttpURLConnection connection = ( HttpURLConnection ) url.openConnection();
 		
-        BufferedReader input = new BufferedReader( new InputStreamReader( connection.getInputStream() ) );
-        StringBuilder builder = new StringBuilder();
-        String line;
+        		BufferedReader input = new BufferedReader( new InputStreamReader( connection.getInputStream() ) );
+        		StringBuilder builder = new StringBuilder();
+        		String line;
         
-        while ( ( line = input.readLine() ) != null ) {
-            builder.append( line );
-        }
+        		while ( ( line = input.readLine() ) != null ) {
+            			builder.append( line );
+        		}
 
-        input.close();
+        		input.close();
 
-	    ResObjGetAll resObject = gson.fromJson( builder.toString(), ResObjGetAll.class );
-	    String path = null;
+	    	ResObjGetAll resObject = gson.fromJson( builder.toString(), ResObjGetAll.class );
+	    	String path = null;
 
-	    if ( resObject.getCode() != 200 ) {
-	    	ResObjDefault resObj = gson.fromJson( builder.toString(), ResObjDefault.class );
+	    	if ( resObject.getCode() != 200 ) {
+	    		ResObjDefault resObj = gson.fromJson( builder.toString(), ResObjDefault.class );
 			request.setAttribute( "error", resObj.getData() );
-	    	path = "view/errorView.jsp";
-	    } else {
+	    		path = "view/errorView.jsp";
+	    	} else {
 			request.setAttribute( "list", resObject.getData() );
 			path = "view/franchisesListView.jsp";
-	    }
+	    	}
 	    
 		request.getRequestDispatcher( path ).forward( request, response );
 	}
@@ -155,26 +155,26 @@ public class FranchisesServlet extends HttpServlet {
 		}
 
 		URL reqUrl = new URL( url + "?" + queryString( hashMap ) );
-        HttpURLConnection connection = ( HttpURLConnection ) reqUrl.openConnection();
-        connection.setRequestMethod( "POST" );
+        		HttpURLConnection connection = ( HttpURLConnection ) reqUrl.openConnection();
+        		connection.setRequestMethod( "POST" );
 
-        BufferedReader input = new BufferedReader( new InputStreamReader( connection.getInputStream() ) );
-        StringBuilder builder = new StringBuilder();
-        String line;
+        		BufferedReader input = new BufferedReader( new InputStreamReader( connection.getInputStream() ) );
+        		StringBuilder builder = new StringBuilder();
+        		String line;
         
-        while ( ( line = input.readLine() ) != null ) {
-            builder.append( line );
-        }
+        		while ( ( line = input.readLine() ) != null ) {
+            			builder.append( line );
+        		}
 
-        input.close();
-	    ResObjDefault resObject = gson.fromJson( builder.toString(), ResObjDefault.class );
+        		input.close();
+	    	ResObjDefault resObject = gson.fromJson( builder.toString(), ResObjDefault.class );
 
-	    if ( resObject.getCode() != code ) {
+	    	if ( resObject.getCode() != code ) {
 			request.setAttribute( "error", resObject.getData() );
 			request.getRequestDispatcher( "view/errorView.jsp" ).forward( request, response );
-	    } else {
+	    	} else {
 			response.sendRedirect( "franchises.do" );
-	    }
+	    	}
 	}
 	
 
@@ -183,26 +183,26 @@ public class FranchisesServlet extends HttpServlet {
 		String brand = request.getParameter( "brand" );
 		String url = (  defaultUrl + "/" + URLEncoder.encode( brand, "UTF-8" ) );
 		URL reqUrl = new URL( url + "?" + "_method=" + URLEncoder.encode( method, "UTF-8" ) );
-        HttpURLConnection connection = ( HttpURLConnection ) reqUrl.openConnection();
-        connection.setRequestMethod( "POST" );
+        		HttpURLConnection connection = ( HttpURLConnection ) reqUrl.openConnection();
+        		connection.setRequestMethod( "POST" );
         
-        BufferedReader input = new BufferedReader( new InputStreamReader( connection.getInputStream() ) );
-        StringBuilder builder = new StringBuilder();
-        String line;
+        		BufferedReader input = new BufferedReader( new InputStreamReader( connection.getInputStream() ) );
+        		StringBuilder builder = new StringBuilder();
+        		String line;
         
-        while ( ( line = input.readLine() ) != null ) {
-            builder.append( line );
-        }
+        		while ( ( line = input.readLine() ) != null ) {
+            			builder.append( line );
+        		}
         
-        input.close();
-	    ResObjDefault resObject = gson.fromJson( builder.toString(), ResObjDefault.class );
+        		input.close();
+	    	ResObjDefault resObject = gson.fromJson( builder.toString(), ResObjDefault.class );
 	    
-	    if ( resObject.getCode() != response.SC_NO_CONTENT ) {
+	    	if ( resObject.getCode() != response.SC_NO_CONTENT ) {
 			request.setAttribute( "error", resObject.getData() );
 			request.getRequestDispatcher( "view/errorView.jsp" ).forward( request, response );
-	    } else {
+	    	} else {
 			response.sendRedirect( "franchises.do" );
-	    }
+	    	}
 	}
 
 }
